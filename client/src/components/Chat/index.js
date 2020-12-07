@@ -7,7 +7,7 @@ import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import MicIcon from "@material-ui/icons/Mic";
 import "./style.css";
 
-const Chat = () => {
+const Chat = ({ messages }) => {
   return (
     <div className="chat">
       <div className="chat__header">
@@ -31,13 +31,21 @@ const Chat = () => {
       </div>
 
       <div className="chat__body">
-         <p className="chat__message">
-           <span className="chat__name">Jordan</span>
+        {/* Go through messages and map through */}
+        {messages.map(message => {
+          return (
+            // string interpolation
+            // this step can change with passport authentication
+            <p className={`chat__message ${message.received && "chat__receiver"}`}>
+              <span className="chat__name">{message.name}</span>
 
-           This is an incoming message
+              {message.message}
 
-           <span className="chat__timestamp">{new Date().toUTCString()}</span>
-         </p>
+              <span className="chat__timestamp">{message.timestamp}</span>
+            </p>
+          )
+        })}
+         
 
          <p className="chat__message chat__receiver">
            <span className="chat__name">Jordan</span>
