@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 // pusher-js used for frontend, pusher used for backend
 import Pusher from "pusher-js";
 import Chat from './components/Chat/index.js';
