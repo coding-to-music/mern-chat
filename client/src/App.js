@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+// pusher-js used for frontend, pusher used for backend
+import Pusher from "pusher-js";
 import Chat from './components/Chat/index.js';
 import Sidebar from './components/Sidebar/index.js';
 import './App.css';
