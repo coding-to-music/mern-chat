@@ -1,0 +1,1 @@
+// While this is a MERN stack build (React = frontend / express, node, mongodb on the backend), Firebase will be utilized for: authentication and hosting on the frontend
