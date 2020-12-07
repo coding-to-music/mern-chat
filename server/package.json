@@ -6,12 +6,16 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
   "author": "Jordan Hunter, Mike Vitelli, Kyle Goldfarb, Dante Ivec, && Andrew Elliot",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^5.11.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }
