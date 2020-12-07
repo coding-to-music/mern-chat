@@ -58,7 +58,8 @@ db.once("open", () => {
         {
           // .name and not .user to return name of person sending message
           name: messageDetails.name,
-          message: messageDetails.message
+          message: messageDetails.message,
+          timestamp: messageDetails.timestamp
         }
       )
     } else {
