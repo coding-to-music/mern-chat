@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Sidebar from './components/Sidebar';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <h1>Let's build a MERN Chat App</h1>
 
       {/* Sidebar component */}
+      <Sidebar />
 
       {/* Chat component */}
     </div>
