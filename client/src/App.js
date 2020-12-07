@@ -3,9 +3,18 @@ import React, { useEffect } from 'react';
 import Pusher from "pusher-js";
 import Chat from './components/Chat/index.js';
 import Sidebar from './components/Sidebar/index.js';
+import axios from "./axios.js";
 import './App.css';
 
 function App() {
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    // .get to pull new messages and sync'd messages 
+    axios.get("/messages/sync").then(response => {
+      setMessages(response.data)
+    })
+  }, [])
 
   // runs a piece of code when the app loads
   useEffect(() => {
@@ -21,6 +30,8 @@ function App() {
     });
   // runs piece of code once
   }, [])
+
+  console.log(messages);
 
   return (
     <div className="app">
