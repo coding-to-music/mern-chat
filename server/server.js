@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 9000
 // Middlewares
 
 // DB config
-const connectionUrl = "mongodb+srv://jordanwhunter:P@$$w0rd12345@cluster0.ogmha.mongodb.net/chattingdb?retryWrites=true&w=majority"
+const connectionUrl = "mongodb+srv://jordanwhunter:A95R2ajtkMZ40yzk@cluster0.ogmha.mongodb.net/chattingdb?retryWrites=true&w=majority"
 
 mongoose.connect(connectionUrl, {
   useCreateIndex: true,
