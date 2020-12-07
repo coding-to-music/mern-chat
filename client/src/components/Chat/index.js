@@ -1,13 +1,31 @@
 import { Avatar, IconButton } from '@material-ui/core';
-import React from 'react';
+import React, { useState } from 'react';
 import DonutLargeIcon from "@material-ui/icons/DonutLarge";
 import AttachFile from "@material-ui/icons/AttachFile";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import MicIcon from "@material-ui/icons/Mic";
+import axios from "../../axios.js";
 import "./style.css";
 
 const Chat = ({ messages }) => {
+  // We need to keep track of the user's input
+  const [input, setInput] = useState("")
+
+  const sendMessage = async (e) => {
+    e.preventDefault();
+
+    await axios.post("/messages/new", {
+      // hard coded until authorization query is implemented
+      name: "DEMO",
+      message: input,
+      timestamp: "Right now",
+      received: true,
+    })
+
+    setInput("");
+  };
+
   return (
     <div className="chat">
       <div className="chat__header">
@@ -47,23 +65,25 @@ const Chat = ({ messages }) => {
         })}
          
 
-         <p className="chat__message chat__receiver">
+         {/* <p className="chat__message chat__receiver">
            <span className="chat__name">Jordan</span>
 
            This is an outgoing message
 
            <span className="chat__timestamp">{new Date().toUTCString()}</span>
-         </p>
+         </p> */}
       </div>
 
       <div className="chat__footer">
         <InsertEmoticonIcon />
         <form>
-          <input 
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)} 
             placeholder="Type message"
             type="text"
           />
-          <button type="submit">Send</button>
+          <button onClick={sendMessage} type="submit">Send</button>
         </form>
         <MicIcon />
       </div>
