@@ -1,11 +1,20 @@
 // Importing dependencies
 import express from "express";
 import mongoose from "mongoose";
+import Pusher from "pusher";
 import Messages from "./dbMessages.js";
 
 // App config
 const app = express()
 const PORT = process.env.PORT || 9000
+
+const pusher = new Pusher({
+  appId: "1119239",
+  key: "b238ba50a5658ab9e0fe",
+  secret: "4e2071e3f4dcc89d6ba5",
+  cluster: "us2",
+  useTLS: true
+});
 
 // Middlewares
 app.use(express.json())
