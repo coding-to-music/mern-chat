@@ -8,4 +8,6 @@ const chattingSchema = mongoose.Schema({
   received: Boolean
 });
 
-export default mongoose.model("messageContent", chattingSchema)
+// collection
+
+export default mongoose.model("messagecontents", chattingSchema)
