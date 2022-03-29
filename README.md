@@ -59,6 +59,25 @@ heroku buildpacks:add mars/create-react-app
 
 ```
 
+Output:
+
+```java
+Buildpack added. Next release on my-mern-chat will use:
+  1. heroku/nodejs
+  2. mars/create-react-app
+Run git push heroku main to create a new release using these buildpacks.
+```
+
+### Lets try reversing the order
+
+```java
+heroku buildpacks:set mars/create-react-app
+
+heroku buildpacks:add heroku/nodejs
+```
+
+Output:
+
 ```java
 Buildpack added. Next release on my-mern-chat will use:
   1. heroku/nodejs
