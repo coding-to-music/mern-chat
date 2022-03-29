@@ -45,17 +45,22 @@ https://github.com/mars/heroku-cra-node
 heroku buildpacks
 
 heroku buildpacks --help
+
+heroku buildpacks:clear
 ```
 
 ### Notice we are doing a SET and then and ADD
 
 ```java
 heroku buildpacks:set heroku/nodejs
+
+heroku buildpacks:add mars/create-react-app
 ```
 
 ```java
 Buildpack added. Next release on my-mern-chat will use:
   1. heroku/nodejs
+  2. mars/create-react-app
 Run git push heroku main to create a new release using these buildpacks.
 ```
 

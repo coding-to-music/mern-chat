@@ -4,11 +4,14 @@
   "description": "",
   "main": "server.js",
   "type": "module",
+  "engines": {
+    "node": "17.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./server/server.js",
+    "start": "node server",
     "build": "cd client/ && npm install && npm run build",
-    "watch": "nodemon ./server/server.js"
+    "watch": "nodemon server"
   },
   "author": "Jordan Hunter, Mike Vitelli, Kyle Goldfarb, Dante Ivec, && Andrew Elliot",
   "license": "ISC",
