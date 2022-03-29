@@ -4,7 +4,11 @@ import mongoose from "mongoose";
 import Pusher from "pusher";
 import Messages from "./dbMessages.js";
 import cors from "cors";
-// import dotenv from "dotenv/config";
+import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 import dotenv from "dotenv";
 dotenv.config();
