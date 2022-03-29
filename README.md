@@ -91,6 +91,20 @@ Run git push heroku main to create a new release using these buildpacks.
 git push heroku
 ```
 
+## Error:
+
+```java
+2022-03-29T08:06:58.791397+00:00 heroku[web.1]: Starting process with command `npm start`
+2022-03-29T08:06:59.934025+00:00 app[web.1]: ls: cannot access '/client/build/static/js/*.js': No such file or directory
+2022-03-29T08:06:59.938326+00:00 app[web.1]: Error injecting runtime env: bundle not found '/client/build/static/js/*.js'. See: https://github.com/mars/create-react-app-buildpack/blob/master/README.md#user-content-custom-bundle-location
+```
+
+Attempted this:
+
+```java
+heroku config:set JS_RUNTIME_TARGET_BUNDLE=/client/build/static/js/*.js
+```
+
 ## Local Development
 
 Because this app is made of two npm projects, there are two places to run `npm` commands:
