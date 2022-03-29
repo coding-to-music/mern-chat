@@ -11,7 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
     "build": "cd client/ && npm install && npm run build",
-    "watch": "nodemon server"
+    "watch": "nodemon server",
+    "deploy": "git add . && git commit -m Heroku && git push && git push heroku"
   },
   "author": "Jordan Hunter, Mike Vitelli, Kyle Goldfarb, Dante Ivec, && Andrew Elliot",
   "license": "ISC",
